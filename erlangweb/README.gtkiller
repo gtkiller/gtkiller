@@ -1,0 +1,8 @@
+bin/compile.erl
+bin/start.erl
+cp somewhere/gtkiller.pem cert/
+bin/start
+bin/connect
+e_auth_dets:add_user("username", "password").
+db:init().
+
