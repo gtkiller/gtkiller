@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Erlang Web</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+  <script type="text/javascript" src="/jquery.js"> </script>
+  <script type="text/javascript" src="/jquery.json-2.2.js"> </script>
+  <script type="text/javascript">
+<![CDATA[
+
+    function b2bctlreq()
+    {
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+        var request = {
+            "from": from,
+            "to": to
+        };
+        $.ajax({
+            url: "/user/json/make_call",
+            type: "POST",
+            data: 'request=' + $.toJSON(request),
+            success: function(data) {
+              document.getElementById("resp").value = data;
+            }
+        });
+    }
+
+]]>
+  </script>
+</head>
+<body>
+<h3 align="center">Make call</h3>
+
+<input type="text" name="from" id="from" value="" size="20"/> 
+<input type="text" name="to" id="to" value="" size="20"/> 
+<input type="button" value="CALL" onclick="b2bctlreq()"/>
+<br/>
+<textarea id="resp" cols="120" rows="20">
+</textarea>
+
+</body>
+</html>

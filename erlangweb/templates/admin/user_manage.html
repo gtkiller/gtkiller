@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Account browser</title>
+        <link rel="stylesheet" type="text/css" href="/common.css" />
+        <script type="text/javascript" src="/jquery.js"> </script>
+        <script type="text/javascript" src="/jquery-json.js"> </script>
+        <script type="text/javascript" src="/common.js"> </script>
+    </head>
+    <body>
+        <h1>Accounts</h1>
+        <div class="form-box">
+            <form name="item-form" action="/admin/json/account" method="post">
+                <div>
+                    <input type="hidden" name="id" />
+                </div>
+                <ul class="field-list">
+                    <li>
+                        <label for="name-field">Name</label>
+                        <span><input id="name-field" type="text" name="name" /></span>
+                    </li>
+                    <li>
+                        <label for="password-field">Password</label>
+                        <span><input id="password-field" type="password" name="password" /></span>
+                    </li>
+                    <li>
+                        <label for="email-field">E-mail</label>
+                        <span><input id="email-field" type="text" name="email" /></span>
+                    </li>
+                    <li>
+                        <label for="jid-field">Login</label>
+                        <span><input id="jid-field" type="text" name="jid" /></span>
+                    </li>
+                    <!--li>
+                        <label for="fingerprint-field">Fingerprint</label>
+                        <span><input id="fingerprint-field" type="text" name="fingerprint" /></span>
+                    </li>
+                    <li>
+                        <label for="status-field">Custom status</label>
+                        <span><input id="status-field" type="text" name="status" /></span>
+                    </li-->
+                    <li>
+                        <label for="active-field">Active</label>
+                        <span><input id="active-field" type="checkbox" name="active" value="true" /></span>
+                    </li>
+                </ul>
+                <ul class="button-list">
+                    <li>
+                        <input class="submit-button" type="button" value="Submit" />
+                    </li>
+                    <li>
+                        <input type="reset" value="Reset" />
+                    </li>
+                    <li>
+                        <input class="cancel-button" type="button" value="Cancel" />
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="list-box">
+            <form name="list-form" action="/admin/json/account" method="post">
+                <ul class="button-list">
+                    <li>
+                        <input class="create-button" type="button" value="New..." />
+                    </li>
+                    <li>
+                        <input class="update-button" type="button" value="Edit..." />
+                    </li>
+                    <li>
+                        <input class="delete-button" type="button" value="Delete" />
+                    </li>
+                </ul>
+                <table id="">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- -->
+                    </tbody>
+                </table>
+                <ul class="button-list">
+                    <li>
+                        <input class="create-button" type="button" value="New..." />
+                    </li>
+                    <li>
+                        <input class="update-button" type="button" value="Edit..." />
+                    </li>
+                    <li>
+                        <input class="delete-button" type="button" value="Delete" />
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </body>
+</html>

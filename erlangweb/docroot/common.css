@@ -1,0 +1,103 @@
+*
+{
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 8pt;
+}
+h1
+{
+    font-size: 150%;
+}
+
+div.form-box
+{
+    display: none;
+}
+div.form-box > form
+{
+    border: 1px solid #aaaaaa;
+    margin: 0em 0em 2em;
+    padding: 0em;
+    width: 30em;
+}
+ul.button-list,
+ul.field-list
+{
+    margin: 1em 0em;
+    padding: 0px;
+}
+ul.button-list
+{
+    text-align: center;
+}
+ul.button-list > li
+{
+    display: inline;
+    padding: 0em;
+}
+ul.field-list > li
+{
+    list-style-type: none;
+    margin: 0.5em 0em;
+    padding: 0px;
+}
+ul.field-list > li > label
+{
+    display: inline-block;
+    text-align: right;
+    width: 15em;
+}
+ul.field-list > li > label:after
+{
+    content: ":";
+}
+ul.field-list > li > span
+{
+    padding-left: 0.5em;
+    position: static;
+}
+ul.field-list > li > span span.error-text
+{
+    background: #feeeee;
+    border: 1px solid #faaaaa;
+    margin: 0em 0em 0em 0.25em;
+    padding: 0.25em 0.5em;
+    position: absolute;
+    width: 20em;
+}
+ul.field-list > li > span > input[type="text"],
+ul.field-list > li > span > input[type="password"]
+{
+    width: 13em;
+}
+
+div.list-box form
+{
+    margin: 0em;
+    padding: 0em;
+}
+div.list-box table,
+div.list-box table th,
+div.list-box table td
+{
+    border: 1px solid #aaaaaa;
+}
+div.list-box table
+{
+    border-collapse: collapse;
+    margin: 1em 0em;
+}
+div.list-box table th
+{
+    background-color: #cccccc;
+    font-weight: normal;
+}
+div.list-box table th,
+div.list-box table td
+{
+    padding: 0.25em;
+}
+div.list-box ul.button-list
+{
+    text-align: left;
+    margin: 0em;
+}

@@ -1,0 +1,38 @@
+.form_container {
+    position: relative;
+    width: 80%;
+}
+
+.form_entry
+{
+    margin-top: 25px;
+    margin-left: 20px;
+    position: inherit;
+}
+
+.form_input {
+    position: absolute;
+    left: 40%
+}
+
+.form_comment {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    font-size: small;
+    font-style: italic;
+}
+
+.form_error {
+    font-variant: small-caps;
+    color: red;
+}
+
+div#item_description, div#item_available
+{
+    margin-bottom: 40px;
+}
+
+.displaynone {
+    display:none;
+}

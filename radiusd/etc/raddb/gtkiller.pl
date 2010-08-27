@@ -27,10 +27,10 @@ use strict;
 # use ...
 # This is very important ! Without this script will not get the filled hashesh from main.
 use vars qw(%RAD_REQUEST %RAD_REPLY %RAD_CHECK);
-use Data::Dumper;
-use CGI;
-use DBI;
-use DBD::mysql;
+#use Data::Dumper;
+#use CGI;
+#use DBI;
+#use DBD::mysql;
 
 # This is hash wich hold original request from radius
 #my %RAD_REQUEST;
@@ -66,14 +66,24 @@ sub authorize {
 # Function to handle authenticate
 sub authenticate {
 	# For debugging purposes only
+	my @replies = ();
 	my $callingstation = $RAD_REQUEST{'Calling-Station-Id'};
+
 	my $calledstation = $RAD_REQUEST{'Called-Station-Id'};
 	my $iddevice = $calledstation;
 	my $gateip = "188.227.5.66:5060";
-	my @replies = ();
-	push @replies, "h323-ivr-in=Routing:".$iddevice.'@'.$gateip.";"."expires=60;rid=-1;cli=$callingstation";
+    push @replies, "h323-ivr-in=Routing:".$iddevice.'@'.$gateip.";"."expires=20;rid=-1;cli=$callingstation".";group=1";
 	
-	$RAD_REPLY{'Cisco-AVPair'} = \@replies;
+   
+#    my $calledstation = '55555579'.$RAD_REQUEST{'Called-Station-Id'};
+#	my $gateip = "206.225.167.4:5060";
+#    my $iddevice = $calledstation;
+#	push @replies, "h323-ivr-in=Routing:".$iddevice.'@'.$gateip.";"."expires=60;rid=-1;cli=$callingstation".";group=2";
+	
+	my $gateip = "188.227.5.6:5060";
+    push @replies, "h323-ivr-in=Routing:".$iddevice.'@'.$gateip.";"."expires=40;rid=-1;cli=$callingstation".";group=3";
+
+    $RAD_REPLY{'Cisco-AVPair'} = \@replies;
 	
 	return RLM_MODULE_OK;
 }

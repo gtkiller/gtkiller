@@ -1,0 +1,25 @@
+#!/bin/sh
+
+ROOTDIR=$1
+RELDIR=$2
+DataFile=$3
+
+shift
+shift
+shift
+
+ERTS_VSN=`awk '{print $2}' $DataFile`
+VSN=`awk '{print $1}' $DataFile`
+
+BINDIR=/usr/lib64/erlang/erts-$ERTS_VSN/bin
+EMU=beam
+PROGNAME=`echo $0 | sed 's/.*\///'`
+HOSTNAME=test
+
+export EMU
+export ROOTDIR
+export BINDIR
+export PROGNAME
+export RELDIR
+
+exec $BINDIR/erlexec -boot $RELDIR/$VSN/start -config $RELDIR/$VSN/sys -heart -env HEART_BEAT_TIMEOUT 30 -pa patches +K true -sname $HOSTNAME -smp auto +P 262140 ${1+"$@"}

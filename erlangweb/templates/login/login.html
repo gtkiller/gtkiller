@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Login page</title>
+  <script type="text/javascript">
+  <![CDATA[
+  function doSubmit(oForm)
+  {
+    return true;
+  }
+  ]]>
+  </script>
+</head>
+<body>
+  <form action="/login_gtk" method="post" accept-charset="utf-8" onsubmit="doSubmit(this)">
+	Login: <wpart:string type="text" value="" id="username" name="username"/>
+    Password: <wpart:password name="password" />
+    <input type="submit" value="Login" />
+  </form>
+</body>
+</html>
